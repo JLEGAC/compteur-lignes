@@ -3,59 +3,61 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Compteur de lignes</title>
-  <meta name="description" content="Compteur de lignes simple (GitHub Pages)" />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Boîte à outils texte — Jérémy</title>
+  <meta name="description" content="Compter et transformer du texte : compteur de lignes, conversions de casse, etc." />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
+
 <body>
-  <main class="container">
-    <header class="header">
-      <h1>Compteur de lignes</h1>
-      <p class="subtitle">Colle ton texte ci-dessous : le compteur se met à jour en temps réel.</p>
-    </header>
+  <main class="wrap">
+    <header class="hero">
+  <div class="brand">
+    <div class="dot" aria-hidden="true"></div>
+    <div>
+      <h1>Boîte à outils texte</h1>
+      <p class="sub">Des outils pratiques pour compter et transformer du texte.</p>
+    </div>
+  </div>
 
-    <section class="panel">
-      <div class="toolbar">
-        <button id="btnClear" type="button" class="btn">Effacer</button>
-        <button id="btnSample" type="button" class="btn btn-secondary">Exemple</button>
-        <label class="check">
-          <input id="chkIgnoreEmpty" type="checkbox" checked />
-          Ignorer les lignes vides
-        </label>
+  <nav class="tabs" aria-label="Navigation">
+    <a class="tab" href="index.html" data-route="/index.html">Accueil</a>
+    <a class="tab" href="tools/compteur/" data-route="/tools/compteur/">Compteur</a>
+    <a class="tab" href="tools/casse/" data-route="/tools/casse/">Casse</a>
+  </nav>
+</header>
+
+
+    <section class="card">
+      <h2>Outils</h2>
+      <p class="hint">Choisis un outil. Chaque page est indépendante (plus simple à maintenir).</p>
+
+      <div class="gridCards">
+        <a class="card toolCard" href="tools/compteur/">
+          <h3>Compteur de lignes</h3>
+          <p>Compte lignes, lignes non vides et caractères sur un texte collé ou saisi.</p>
+          <div class="badgeRow">
+            <span class="badge">Compter</span>
+            <span class="badge">Analyse rapide</span>
+          </div>
+        </a>
+
+        <a class="card toolCard" href="tools/casse/">
+          <h3>Conversion de casse</h3>
+          <p>Minuscules ↔ majuscules + majuscule en tête de phrases et de mots.</p>
+          <div class="badgeRow">
+            <span class="badge">Convertir</span>
+            <span class="badge">Copier</span>
+          </div>
+        </a>
       </div>
-
-      <textarea id="input" placeholder="Colle ton texte ici…" spellcheck="false"></textarea>
-
-      <div class="stats" aria-live="polite">
-        <div class="stat">
-          <div class="statLabel">Lignes</div>
-          <div class="statValue" id="lines">0</div>
-        </div>
-        <div class="stat">
-          <div class="statLabel">Lignes non vides</div>
-          <div class="statValue" id="nonEmptyLines">0</div>
-        </div>
-        <div class="stat">
-          <div class="statLabel">Caractères</div>
-          <div class="statValue" id="chars">0</div>
-        </div>
-      </div>
-
-      <details class="details">
-        <summary>Comment ça compte ?</summary>
-        <ul>
-          <li>On normalise les fins de ligne (\r\n et \r → \n).</li>
-          <li><strong>Lignes</strong> = nombre de segments séparés par \n (avec un cas spécial : texte vide → 0).</li>
-          <li><strong>Lignes non vides</strong> = lignes dont le contenu (trim) n’est pas vide.</li>
-        </ul>
-      </details>
     </section>
 
     <footer class="footer">
-      <p>100% statique — fonctionne hors-ligne. Parfait pour GitHub Pages 🙂</p>
-    </footer>
+  <p>Aucune pub, Aucun cookie, Aucun tracking, Aucun appel à des services tiers.</p>
+</footer>
+
   </main>
 
-  <script src="script.js"></script>
+  <script src="assets/app.js"></script>
 </body>
 </html>
