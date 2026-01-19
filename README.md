@@ -1,41 +1,67 @@
 # Boîte à outils texte (GitHub Pages)
 
-Petit site **100 % statique** (HTML / CSS / JavaScript) permettant de compter :
-- le nombre de lignes
-- le nombre de caractères  
-d’un texte collé ou saisi dans la page.
+Petit site **100 % statique** (HTML / CSS / JavaScript) proposant des outils simples
+pour **analyser et transformer du texte** directement dans le navigateur.
 
-## 🚀 Mise en ligne via GitHub Pages
-*(Pour publier un site GitHub Pages, il faut aller dans le dépôt GitHub → Settings → Pages)*
+Aucune donnée n’est envoyée à un serveur : tout se fait localement.
 
-- **Source** : `Deploy from a branch`
-- **Branch** : `main` (ou `master`)
-- **Folder** : `/ (root)`
+## ✨ Outils disponibles
 
-## 🌐 URL du site
+- **Compteur de lignes**
+  - nombre total de lignes
+  - nombre de lignes non vides
+  - nombre de caractères
 
-Le site est accessible à l’adresse suivante :
+- **Conversion de casse**
+  - minuscules ↔ majuscules
+  - majuscule en tête de phrases
+  - majuscule en tête de mots
+  - copie rapide vers le presse-papiers
+
+D’autres outils pourront être ajoutés progressivement.
+
+## 🌐 Accès au site
 
 👉 https://jlegac.github.io/compteur-lignes/
 
-## Arborescence
+## 🧱 Arborescence du projet
 
-- `index.html` : accueil
-- `assets/styles.css` : styles communs
-- `assets/app.js` : utilitaires communs (copie + onglet actif)
-- `tools/compteur/` : compteur de lignes
-- `tools/casse/` : conversion de casse
+```
 
-## Déploiement GitHub Pages
+/
+├── index.html              # page d’accueil
+├── assets/
+│   ├── styles.css          # styles communs
+│   └── app.js              # utilitaires communs (copie, navigation)
+├── tools/
+│   ├── compteur/
+│   │   ├── index.html
+│   │   └── tool.js
+│   └── casse/
+│       ├── index.html
+│       └── tool.js
 
-1. Repo GitHub > Settings > Pages
-2. Source : `Deploy from a branch`
-3. Branch : `main` (ou `master`), dossier `/ (root)`
-4. Enregistrer
+```
 
-URL typique :
-- Accueil : `https://<user>.github.io/<repo>/`
-- Compteur : `.../tools/compteur/`
-- Casse : `.../tools/casse/`
-Aucune pub, Aucun cookie, Aucun tracking, Aucun appel à des services tiers.
+Chaque outil dispose de sa propre page et de son propre script JavaScript,
+ce qui facilite l’évolution et la maintenance du site.
 
+## 🚀 Mise en ligne via GitHub Pages
+
+1. Aller dans le dépôt GitHub → **Settings** → **Pages**
+2. Choisir :
+   - **Source** : `Deploy from a branch`
+   - **Branch** : `main` (ou `master`)
+   - **Folder** : `/ (root)`
+3. Enregistrer
+
+Le site est alors automatiquement publié.
+
+## 🔒 Vie privée
+
+- Aucune publicité
+- Aucun cookie
+- Aucun tracking
+- Aucun appel à des services tiers
+
+Le site fonctionne entièrement en local dans le navigateur.
